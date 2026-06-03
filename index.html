@@ -1,4 +1,47 @@
-<h1>meu blog tech sobre dinossauros</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DinoWorld Wiki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <span class="logo-icon">🦖</span>
+                <h2>Dino<span>World</span></h2>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><button class="nav-btn active" data-dino="t-rex">Tyrannosaurus Rex</button></li>
+                    <li><button class="nav-btn" data-dino="triceratops">Triceratops</button></li>
+                    <li><button class="nav-btn" data-dino="velociraptor">Velociraptor</button></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="card-wiki">
+                <h1 id="dino-title">Tyrannosaurus Rex</h1>
+                
+                <div class="media-container">
+                    <img id="dino-img" src="https://images.unsplash.com/photo-1525857597365-5f6dbff2e36e?w=800" alt="T-Rex">
+                    <div class="audio-box">
+                        <button id="play-sound-btn">🎵 Ouvir Rugido</button>
+                        <audio id="dino-audio" src="sons/t-rex.mp3"></audio>
+                    </div>
+                </div>
+
+                <div class="info-container">
+                    <div class="info-block">
+                        <h3>História e Comportamento</h3>
+       <h1>meu blog tech sobre dinossauros</h1>
 
 <p>nesse blog tech falarei sobre dinossauros</p>
 
@@ -53,3 +96,22 @@
     </div>
 
     <script src="script.js"></script>
+                 <p id="dino-desc">O Tiranossauro Rex foi um dos maiores carnívoros terrestres de todos os tempos. Viveu no final do período Cretáceo e era conhecido por sua mordida extremamente poderosa, capaz de quebrar ossos, e dentes serrilhados altamente eficientes para caça.</p>
+                    </div>
+                    
+                    <div class="info-block technical">
+                        <h3>Ficha Técnica</h3>
+                        <ul id="dino-stats">
+                            <li><strong>Período:</strong> Cretáceo Superior</li>
+                            <li><strong>Dieta:</strong> Carnívoro</li>
+                            <li><strong>Tamanho:</strong> Até 12 metros de comprimento</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
