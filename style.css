@@ -2,136 +2,219 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
+    background: linear-gradient(135deg, #121814 0%, #080c09 100%);
+    color: #f5f5f5;
+    min-height: 100vh;
 }
 
-.container {
+.app-container {
     display: flex;
     min-height: 100vh;
 }
 
-/* Menu Lateral (Sidebar) */
 .sidebar {
-    width: 250px;
-    background-color: #111;
-    padding: 20px;
-    border-right: 2px solid #333;
+    width: 280px;
+    background-color: #0b110e;
+    padding: 30px 20px;
+    border-right: 1px solid #1a291f;
+    display: flex;
+    flex-direction: column;
 }
 
-.sidebar h2 {
-    color: #ff6b6b;
-    margin-bottom: 30px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    padding-left: 10px;
 }
 
-.sidebar ul {
+.logo-icon {
+    font-size: 2rem;
+}
+
+.logo-area h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.logo-area h2 span {
+    color: #0f9b58;
+}
+
+.menu ul {
     list-style: none;
 }
 
-.sidebar li {
-    margin-bottom: 10px;
+.menu li {
+    margin-bottom: 12px;
 }
 
 .nav-btn {
     width: 100%;
-    padding: 12px 15px;
-    background: none;
-    border: 1px solid transparent;
-    color: #aaa;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #b3b3b3;
     text-align: left;
-    font-size: 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
     cursor: pointer;
-    border-radius: 6px;
-    transition: all 0.3s ease;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.nav-btn:hover, .nav-btn.active {
-    background-color: #ff6b6b;
+.nav-btn:hover {
+    background: rgba(15, 155, 88, 0.1);
+    color: #0f9b58;
+    border-color: #0f9b58;
+    transform: translateY(-2px);
+}
+{
+.nav-btn.active {
+    background: linear-gradient(135deg, #0f9b58 0%, #0a6b3d 100%);
     color: #fff;
-    font-weight: bold;
-    transform: translateX(5px);
+    border: none;
+    box-shadow: 0 4px 15px rgba(15, 155, 88, 0.4);
 }
 
-/* Área de Conteúdo */
-.content-area {
+/* Área de Conteúdo Principal (Card Centralizado) */
+.main-content {
     flex: 1;
     padding: 40px;
-    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-wiki {
+    width: 100%;
+    max-width: 850px;
+    background: rgba(20, 30, 24, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
 #dino-title {
     font-size: 2.5rem;
-    color: #ff6b6b;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 25px;
+    position: relative;
 }
 
-.dino-media {
-    margin-bottom: 20px;
+#dino-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #ff6f00;
+    border-radius: 2px;
+    margin-top: 8px;
+}
+
+.media-container {
+    position: relative;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
 #dino-img {
-    max-width: 100%;
-    height: 350px;
+    width: 100%;
+    height: 380px;
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    display: block;
+    transition: transform 0.5s ease;
 }
 
-/* Botão de Áudio */
-.audio-control {
-    margin-bottom: 25px;
+.media-container:hover #dino-img {
+    transform: scale(1.03);
+}
+
+.audio-box {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
 
 #play-sound-btn {
-    padding: 10px 20px;
-    background-color: #4cab50;
+    padding: 12px 24px;
+    background: #ff6f00;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 50px;
+    font-weight: 600;
     cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background 0.2s;
+    box-shadow: 0 4px 15px rgba(255, 111, 0, 0.4);
+    transition: all 0.2s;
 }
 
 #play-sound-btn:hover {
-    background-color: #45a049;
+    background: #e65c00;
+    transform: scale(1.05);
 }
 
-/* Informações do Dinossauro */
-.dino-info h3 {
-    color: #ffa502;
-    margin: 20px 0 10px 0;
+/* Textos e Detalhes */
+.info-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
 }
 
-.dino-info p {
-    line-height: 1.6;
-    color: #ccc;
+.info-block h3 {
+    color: #0f9b58;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.info-block p {
+    color: #ced6d0;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.technical {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 #dino-stats {
-    list-style-type: square;
-    margin-left: 20px;
-    line-height: 1.8;
+    list-style: none;
 }
 
-/* Responsividade simples para celulares */
+#dino-stats li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #ced6d0;
+}
+
+#dino-stats strong {
+    color: #ff6f00;
+}
+
 @media (max-width: 768px) {
-    .container {
+    .app-container {
         flex-direction: column;
     }
     .sidebar {
         width: 100%;
-        border-right: none;
-        border-bottom: 2px solid #333;
+    }
+    .info-container {
+        grid-template-columns: 1fr;
+    }
+    #dino-img {
+        height: 250px;
     }
 }
